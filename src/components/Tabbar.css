@@ -1,0 +1,34 @@
+.tabbar-wrapper {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(var(--gf-accent-rgb, 37, 99, 235), 0.18);
+  box-shadow: 0 10px 30px -28px rgba(var(--gf-accent-rgb, 37, 99, 235), 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.tabbar-nav {
+  gap: 0.75rem !important;
+}
+
+.tabbar-link {
+  border-radius: 999px !important;
+  padding: 0.55rem 1.45rem;
+  font-weight: 600;
+  color: rgba(60, 64, 67, 0.75) !important;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tabbar-link:hover {
+  color: var(--gf-accent, #2563eb) !important;
+  background: rgba(var(--gf-accent-rgb, 37, 99, 235), 0.12) !important;
+}
+
+.tabbar-link.active {
+  background: var(--gf-accent, #2563eb) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 16px -10px rgba(var(--gf-accent-rgb, 37, 99, 235), 0.55);
+}

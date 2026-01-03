@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React App</title>
+  <style>
+    body {
+      position: relative;
+      background-color: #f8f9fa;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(rgba(248, 249, 250, 0.6), rgba(248, 249, 250, 0.7)),
+        url('/images/icon.jpg') center / cover no-repeat;
+      filter: blur(4px);
+      transform: scale(1.015);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
