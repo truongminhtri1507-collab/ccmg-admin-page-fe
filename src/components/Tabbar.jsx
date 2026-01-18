@@ -7,6 +7,8 @@ const Tabbar = ({ activeTab, onTabChange }) => {
     { id: 'question-list', label: 'Danh sách câu hỏi' },
     { id: 'add-question', label: 'Thêm câu hỏi' },
     { id: 'preview-question', label: 'Xem trước câu hỏi' },
+    { id: 'exam-builder', label: 'Tạo bộ đề' },
+    { id: 'user-management', label: 'Quản lý người dùng' },
   ];
 
   return (

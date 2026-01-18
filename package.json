@@ -6,7 +6,8 @@
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^19.2.3",
     "react-hook-form": "^7.69.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "react-toastify": "^11.0.5"
   },
   "scripts": {
     "start": "react-scripts start",

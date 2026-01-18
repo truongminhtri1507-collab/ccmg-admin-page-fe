@@ -75,8 +75,41 @@ const QuestionPreview = ({ question }) => {
           )}
 
           {question.type === 'essay' && (
-            <div className="alert alert-secondary mt-3">
-              <strong>Gợi ý:</strong> {question.hint || 'Không có'}
+            <div className="mt-4 d-flex flex-column gap-3">
+              <div className="d-flex flex-wrap gap-2 align-items-center">
+                {question.group && (
+                  <span className="badge bg-primary-subtle text-primary fw-semibold px-3 py-2 rounded-pill">
+                    Nhóm: {question.group}
+                  </span>
+                )}
+                <span
+                  className={`badge px-3 py-2 rounded-pill ${
+                    question.isVerified ? 'bg-success-subtle text-success' : 'bg-warning-subtle text-warning'
+                  }`}
+                >
+                  {question.isVerified ? 'Đã duyệt' : 'Chưa duyệt'}
+                </span>
+              </div>
+
+              {Array.isArray(question.keywords) && question.keywords.length > 0 && (
+                <div className="d-flex flex-column gap-2">
+                  <span className="text-muted small text-uppercase fw-semibold">Từ khóa</span>
+                  <div className="d-flex flex-wrap gap-2">
+                    {question.keywords.map((keyword) => (
+                      <span
+                        key={keyword}
+                        className="badge bg-light text-secondary border rounded-pill px-3 py-2"
+                      >
+                        {keyword}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div className="alert alert-secondary mb-0">
+                <strong>Gợi ý:</strong> {question.hint || 'Không có'}
+              </div>
             </div>
           )}
         </div>

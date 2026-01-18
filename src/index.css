@@ -4,6 +4,8 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f9fa;
   color: #212529;
+  position: relative;
+  min-height: 100vh;
 }
 
 #root {
@@ -14,4 +16,29 @@ body {
 
 .app-shell {
   background: transparent;
+}
+
+.page-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.36);
+  backdrop-filter: blur(6px);
+}
+
+@media (max-width: 576px) {
+  .page-screen {
+    padding: 16px;
+  }
 }

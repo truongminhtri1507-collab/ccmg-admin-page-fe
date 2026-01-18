@@ -4,6 +4,7 @@ const generateId = (prefix) => `${prefix}-${Math.random().toString(36).slice(2, 
 
 const createEmptyOption = () => ({
   id: generateId('option'),
+  label: null,
   text: '',
   isCorrect: false,
 });
@@ -15,6 +16,9 @@ const createEmptyDraft = () => ({
   options: [createEmptyOption(), createEmptyOption()],
   hint: '',
   category: 'co-so',
+  group: '',
+  keywords: [],
+  isVerified: false,
 });
 
 const initialState = {
@@ -53,12 +57,23 @@ const reducer = (state, action) => {
             action.payload.type === 'multiple-choice'
               ? action.payload.options.map((option) => ({
                   id: option.id || generateId('option'),
+                  label: option.label,
                   text: option.text,
                   isCorrect: Boolean(option.isCorrect),
                 }))
               : [],
           category: action.payload.category ?? 'co-so',
+          group: action.payload.group ?? '',
+          keywords: Array.isArray(action.payload.keywords)
+            ? action.payload.keywords.filter((keyword) => typeof keyword === 'string')
+            : [],
+          isVerified: Boolean(action.payload.isVerified),
         },
+      };
+    case 'HYDRATE_QUESTIONS':
+      return {
+        ...state,
+        questions: Array.isArray(action.payload) ? action.payload : [],
       };
     case 'SAVE_QUESTION': {
       const questionWithId = {
@@ -76,7 +91,6 @@ const reducer = (state, action) => {
         questions: nextQuestions,
         editingQuestionId: null,
         draft: createEmptyDraft(),
-        activeTab: 'question-list',
       };
     }
     case 'DELETE_QUESTION': {
@@ -92,21 +106,6 @@ const reducer = (state, action) => {
               draft: createEmptyDraft(),
             }
           : {}),
-      };
-    }
-    case 'REORDER_QUESTIONS': {
-      const { fromIndex, toIndex } = action.payload;
-      if (toIndex < 0 || toIndex >= state.questions.length) {
-        return state;
-      }
-
-      const updated = [...state.questions];
-      const [moved] = updated.splice(fromIndex, 1);
-      updated.splice(toIndex, 0, moved);
-
-      return {
-        ...state,
-        questions: updated,
       };
     }
     default:

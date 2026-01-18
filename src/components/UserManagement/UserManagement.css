@@ -1,0 +1,111 @@
+.user-management .card {
+  border-radius: 18px;
+}
+
+.user-metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.user-metric:last-child {
+  border-bottom: none;
+}
+
+.user-metric__label {
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.user-metric__value {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.user-search input[type='search'] {
+  border-radius: 12px;
+  border: 1px solid rgba(13, 110, 253, 0.2);
+}
+
+.user-search input[type='search']:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+  border-color: rgba(13, 110, 253, 0.7);
+}
+
+.user-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
+
+.user-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.user-modal__content {
+  position: relative;
+  width: min(720px, 92vw);
+  max-height: 92vh;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-modal__header {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.user-modal__body {
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.user-modal .btn-close {
+  filter: invert(0.5);
+}
+
+.user-modal .form-control,
+.user-modal .form-select {
+  border-radius: 12px;
+}
+
+.user-modal .form-control:focus,
+.user-modal .form-select:focus {
+  border-color: rgba(13, 110, 253, 0.7);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.user-modal__content .btn-primary {
+  padding-inline: 24px;
+}
+
+.user-meta {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 16px;
+}
+
+@media (max-width: 576px) {
+  .user-modal__content {
+    width: 95vw;
+  }
+
+  .user-modal__body {
+    padding: 16px;
+  }
+}

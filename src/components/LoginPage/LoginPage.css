@@ -1,0 +1,82 @@
+.login-page {
+  width: 100%;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  max-width: 420px;
+  width: 100%;
+  padding: 32px 36px;
+  backdrop-filter: blur(14px);
+}
+
+.login-card__header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-card__header h1 {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #1b1f3b;
+}
+
+.login-card__header p {
+  color: rgba(27, 31, 59, 0.72);
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.login-form .form-floating > label {
+  color: #6c757d;
+}
+
+.login-form .form-floating .form-control {
+  border-radius: 12px;
+  border: 1px solid rgba(13, 110, 253, 0.18);
+  box-shadow: none;
+  padding-right: 3rem;
+}
+
+.login-form .form-floating .form-control:focus {
+  border-color: rgba(13, 110, 253, 0.8);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.login-form .invalid-feedback {
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  text-decoration: none;
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.toggle-password:hover,
+.toggle-password:focus {
+  color: #0a58ca;
+}
+
+.login-card__footer {
+  margin-top: 32px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .login-card {
+    padding: 28px 24px;
+    border-radius: 20px;
+  }
+
+  .login-page {
+    width: 100%;
+  }
+}
